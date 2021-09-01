@@ -1,0 +1,37 @@
+<html>
+    <head> 
+        <%- include('./login_css'); %>
+
+        <link rel="stylesheet" href="login.css">
+    </head>
+<body>
+    
+<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<div class="logo"></div>
+<div class="login-block">
+    <h1>Login</h1>
+    <input type="text" value="" placeholder="Username" id="username" />
+    <input type="password" value="" placeholder="Password" id="password" />
+    <button onclick="javascript:validate()">Login</button>
+</div>
+
+<script>
+function validate()
+{
+    if(   document.getElementById("username").value == "Team16"
+       && document.getElementById("password").value == "Team@16" )
+    {
+        location.href="http://localhost:3001/r/dashboard";
+    }
+    else
+    {
+        alert( "validation failed" );
+        console.log("Please, enter coeerct data");
+        location.href="http://localhost:3000/login";
+    }
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= symbol %> Dashboard</title>
+    <%- include('./styles_dashboard'); %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+</head>
+
+<body style="background-color:hsl(30, 9%, 96%)">
+    <div class="container">
+        <h1>dashboard</h1>
+        
+        
+        <br><br><br><br>
+        <div class="row">
+            <div class="col-sm-2 box">
+                <h5>$<%= fVolume %> </h5>
+                <h5>fVolume</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$<%= volume %> </h5>
+                <h5>volume</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$<%= uVolume %> </h5>
+                <h5>uVolume</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$<%= id %> </h5>
+                <h5>id</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$<%= change %></h5>
+                <h5>Change</h5>
+            </div>
+        </div>
+        <br><br>
+
+        <a href="http://localhost:3001/history" class="history">history</a>
+        <br><br>
+        <div class=row>
+            <div class= col-sm-8>
+                <div class="graph">
+                    <div class="col-sm-1">
+                        <button class="range">1D</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">5D</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">1M</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">6M</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">1Y</button>
+                        
+                    </div>
+
+                  
+
+                    <div class="dropdown">
+                        <button class="dropbtn">graphType </button>
+                            <div class="dropdown-content">
+                            <script>var num</script> 
+                            <a href="http://localhost:3001/r/dashboard">OHLC</a>
+                            <a >Candelstick Charts</a>
+                            <a onclick="num=2">Colored Bar</a>
+                            <a href="#">Vertex line</a>
+                            <a onclick="num=3">Hollow Candle</a>
+                            </div>
+                    </div>                                                
+                        //-------------
+                        
+                            <canvas id="myChart" style="width:100%;max-width:600px;margin:auto"></canvas>
+                          <script>
+                          var xValues = ["10.45","11","11.30","11.45","12","12.30","12.45","13","13.30","13.45","14","14.30","14.45","15"];
+              
+                          new Chart("myChart", {
+                            type: "line",
+                            data: {
+                              labels: xValues,
+                              datasets: [{ 
+                                data: [129.41,133.6116,126.76,133.52,133.52,129.41,133.6116,126.76,132.8956,128.8048,126.1672,132.8956,128.8048,126.1672],
+                                borderColor: "red",
+                                fill: true
+                              }]
+                            },
+                            options: {
+                              legend: {display: false}
+                            }
+                          });
+                          </script>
+                        
+              </div>
+              
+                <div class="currencies">
+                    
+                   <div class="col-sm-6 topgainers">
+                    <h3 style="color: blue; text-align: center;margin-top: 20px;">Top gainers</h3>
+                    <br><br>
+                    <table class="table table-striped"> 
+                        <th>Stock</th>
+                        <th>current value</th>
+                        <th>gain</th>
+                        <tr>
+                            <td>Stock 1</td>
+                            <td>$<%= high %> </td>
+                            <td>$<%= open %> </td>
+                        </tr>
+                        <tr>
+                            <td>Stock 2</td>
+                            <td>$<%= fHigh %> </td>
+                            <td>$<%= fLow %> </td>
+                        </tr>
+                    </table>
+                   </div>
+                   <div class="col-sm-6 toplosers">
+                    <h3 style="color: blue; text-align: center;margin-top: 20px;">Top losers</h3>
+                    <br><br>
+                    <table class="table table-striped"> 
+                        <th>Stock</th>
+                        <th>current value</th>
+                        <th>lose</th>
+                        <tr>
+                            <td>Stock 1</td>
+                            <td>$<%= fOpen %> </td>
+                            <td>$<%= uOpen %> </td>
+                        </tr>
+                        <tr>
+                            <td>Stock 2</td>
+                            <td>$<%= fClose %> </td>
+                            <td>$<%= uClose %> </td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+
+            </div>
+            <div class= "col-sm-4 market_avg">
+                <h3 style="text-align: center; margin-top: 20px;">list of stocks Available</h3>
+                <br><br>
+                
+                <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search.." name="search2">
+                    <button type="submit" id="add"><i class="fa fa-search"></i></button>
+                  </form>
+                  <br><br>
+                  <ul id="myUL">
+                    <li><a href="http://localhost:3001/r/dashboard">dashboard</a></li>
+                    <li><a href="http://localhost:3001/r/microsoft">microsoft </a></li>
+                    <li><a href="http://localhost:3001/r/facebook">facebook</a></li>
+                    
+                </ul>
+                </table>
+            </div>
+        </div>
+        
+        
+    </div>
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+        
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+</body>
+</html>

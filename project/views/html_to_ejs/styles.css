@@ -1,0 +1,200 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+.col-sm-2{
+    height:70px;
+    background-color: blue;
+    border-radius: 20px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.col-sm-2:hover{
+  
+  background-color: blueviolet;
+  
+  
+}
+.col-sm-2 h5{
+    text-align: center;    
+    color: white;
+}
+
+.market_avg{   
+    
+    width: 300px;
+    border-radius: 20px;
+    margin-top: 10px;
+    height: 600px;
+    background-color: white;
+   
+    box-shadow: 5px 10px lightgray;
+    overflow-y: scroll;
+
+}
+
+
+.graph{
+    height: 400px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 10px;    
+    box-shadow: 5px 10px lightgray;
+}
+
+.graph .range{
+  background-color: #0000ff;
+  border: none;
+  width:20px;
+  border-radius:25px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center; 
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 4px;
+  cursor: pointer;  
+   
+}
+.graph button:hover {
+  background: blueviolet;
+}
+
+.graph p{
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+}
+
+.currencies{
+    height: 400px;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 10px;
+  
+    box-shadow: 5px 10px lightgray;
+}
+
+.topgainers{
+  background-color: white;
+  height: 380px;
+  border-radius: 20px;
+  margin-top: 10px;
+  border: 1px solid lightslategray;
+  overflow-y: scroll;
+}
+.toplosers{
+  background-color: white;
+  height: 380px;
+  border-radius: 20px;
+  margin-top: 10px;
+  border: 1px solid lightslategray; 
+  overflow-y: scroll;
+  
+}
+
+  * {
+    box-sizing: border-box;
+  }
+
+
+ form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  
+  form.example button:hover {
+    background: blueviolet;
+  }
+  
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .dropbtn {
+    background-color: blue;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    float: left;
+    }
+
+    .dropdown {
+    position: relative;
+    margin-right: 20px;
+    margin-top: 10px;
+    float: right;
+    
+    }
+
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+
+    .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+    background-color: blueviolet;
+    }
+
+    .history {
+      background-color: blue;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;      
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      margin-top: 50px;
+      float: right;
+      border-radius: 15px;
+     
+    }
+    .history:hover {
+      background-color: blueviolet;
+      
+      color: white;
+      
+    }

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+</head>
+
+<body style="background-color:hsl(30, 9%, 96%)">
+    <div class="container">
+        <h1>dashboard</h1>
+        
+        
+        <br><br><br><br>
+        <div class="row">
+            <div class="col-sm-2 box">
+                <h5>$***</h5>
+                <h5>Global Converted Average</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$***</h5>
+                <h5>Global 24hr Volume</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$***</h5>
+                <h5>Available ETH</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$***</h5>
+                <h5>Market Cap(Usd)</h5>
+            </div>
+            <div class="col-sm-2">
+                <h5>$***</h5>
+                <h5>Market Cap(BTC)</h5>
+            </div>
+        </div>
+        <br><br>
+
+        <a href="history.html" class="history">history</a>
+        <br><br>
+        <div class=row>
+            <div class= col-sm-8>
+                <div class="graph">
+                    <div class="col-sm-1">
+                        <button class="range">1D</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">5D</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">1M</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">6M</button>
+                        
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="range">1Y</button>
+                        
+                    </div>
+
+                  
+
+                    <div class="dropdown">
+                        <button class="dropbtn">graphType </button>
+                            <div class="dropdown-content">
+                            <a href="#">OHLC</a>
+                            <a href="#">Candelstick Charts</a>
+                            <a href="#">Colored Bar</a>
+                            <a href="#">Vertex line</a>
+                            <a href="#">Hollow Candle</a>
+                            </div>
+                    </div>                                                
+                        
+              </div>
+              
+                <div class="currencies">
+                    
+                   <div class="col-sm-6 topgainers">
+                    <h3 style="color: blue; text-align: center;margin-top: 20px;">Top gainers</h3>
+                    <br><br>
+                    <table class="table table-striped"> 
+                        <th>Stock</th>
+                        <th>current value</th>
+                        <th>gain</th>
+                        <tr>
+                            <td>Stock 1</td>
+                            <td>$**</td>
+                            <td>$**</td>
+                        </tr>
+                        <tr>
+                            <td>Stock 2</td>
+                            <td>$**</td>
+                            <td>$**</td>
+                        </tr>
+                    </table>
+                   </div>
+                   <div class="col-sm-6 toplosers">
+                    <h3 style="color: blue; text-align: center;margin-top: 20px;">Top losers</h3>
+                    <br><br>
+                    <table class="table table-striped"> 
+                        <th>Stock</th>
+                        <th>current value</th>
+                        <th>lose</th>
+                        <tr>
+                            <td>Stock 1</td>
+                            <td>$**</td>
+                            <td>$**</td>
+                        </tr>
+                        <tr>
+                            <td>Stock 2</td>
+                            <td>$**</td>
+                            <td>$**</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+
+            </div>
+            <div class= "col-sm-4 market_avg">
+                <h3 style="text-align: center; margin-top: 20px;">list of stocks Available</h3>
+                <br><br>
+                
+                <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+                    <input type="text" placeholder="Search.." name="search2">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </form>
+                  <br><br>
+                <table class="table table-striped">
+                    <th>stock</th>
+                    <th>symbol</th>
+                    <tr>
+                        <td>stock1</td>
+                        <td>stock symbol</td>
+                    </tr>
+                    <tr>
+                        <td>stock2</td>
+                        <td>stock symbol</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        
+    </div>
+</body>
+</html>

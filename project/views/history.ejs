@@ -1,0 +1,115 @@
+
+    
+    
+    <!DOCTYPE html>
+    <html>
+        <head>
+        <%- include('./styles_dashboard'); %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src= "require.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    #myInput {
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      width: 100%;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #ddd;
+      margin-bottom: 12px;
+    }
+    
+    #myUL {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #myUL li a {
+      border: 1px solid #ddd;
+      margin-top: -1px; /* Prevent double borders */
+      background-color: #f6f6f6;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block
+    }
+    
+    #myUL li a:hover:not(.header) {
+      background-color: #eee;
+    }
+    </style>
+    <script>var arr = [15];
+        if(sessionStorage.length != 0){
+            arr = JSON.parse(sessionStorage.getItem("items"));
+        }
+        </script>
+    </head>
+    <body>
+    
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for company names.." title="Type in a name">
+    <button id="add">Search</button>
+    
+    <ul id="myUL">
+        <li><a href="#">company1</a></li>
+        <li><a href="#">company2</a></li>
+        <li><a href="#">company3</a></li>
+        <li><a href="#">company4</a></li>
+        <li><a href="#">acompany5</a></li>
+        <li><a href="#">company1</a></li>
+        <li><a href="#">company2</a></li>
+        <li><a href="#">company3</a></li>
+        <li><a href="#">company4</a></li>
+        <li><a href="#">acompany5</a></li>
+        <li><a href="#">company1</a></li>
+        <li><a href="#">company2</a></li>
+        <li><a href="#">company3</a></li>
+        <li><a href="#">company4</a></li>
+        <li><a href="#">acompany5</a></li>
+    
+    </ul>
+    
+    <script>
+        
+    function myFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+    
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+    
+    $(function() {
+          var input = $(":text");
+          var button = $("button");
+          button.click(function() {
+            arr.push(input.val());
+            input.val("");
+            
+            for(let i = arr.length;i>0; i--){
+                
+                 console.log(arr[i]);
+             }
+    
+             sessionStorage.setItem("items", JSON.stringify(arr));
+             sessionStorage.clear();
+            
+          })
+        })
+    </script>
+    
